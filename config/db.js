@@ -1,9 +1,13 @@
 const mongoose = require('mongoose');
-var firebase = require("firebase/app");
+const firebase = require("firebase/app");
+const path      = require("path");
 
 
-var db_url = "mongodb://127.0.0.1:27017/RLYZER";    
-mongoose.connect(db_url,{ useUnifiedTopology: true ,  useNewUrlParser: true , useFindAndModify: false  } ,(err)=>{
+require('dotenv').config({ path: path.join(__dirname , ".." ,".env") });
+
+
+const db_url = process.env.DB_HOST || "mongodb://127.0.0.1:27017/RSI";    
+mongoose.connect(db_url,{  useNewUrlParser: true  } ,(err)=>{
     if(err){
         console.log("Some problem occured While Connecting to MongoDB ", err);
     }else{
@@ -17,7 +21,7 @@ mongoose.connect(db_url,{ useUnifiedTopology: true ,  useNewUrlParser: true , us
 
 //-----------------------------------------------------------FirebaseConfiguration-------------------------------------------------------//
 
-var firebaseConfig =  {
+const firebaseConfig =  {
     "apiKey": "AIzaSyDSxF3ELmh25350kWS2BEOwpQeHJu1oPPs",
     "authDomain": "vats-retbot.firebaseapp.com",
     "projectId": "vats-retbot",

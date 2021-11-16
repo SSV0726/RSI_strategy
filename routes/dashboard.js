@@ -11,19 +11,13 @@ var path = require('path');
 
 utils.print("./routes/dashboard.js file Loaded sucessfully!!");
 
-const combinedData = require("../models/combinedData");
-const feedDetails = require("../models/feedDetails");
-
-
-// var autoLoginFeed_command = "python scripts\\autoLoginFeed.py";
-var autoLoginFeed_command =    "python3 /root/RLYZER/scripts/autoLoginFeed.py";
 
     
 
 module.exports = app =>{
 
     app.get('/',(req,res)=>{
-        res.render("login");
+        res.redirect("dashboard");
     })
 
     app.get('/login',(req,res)=>{

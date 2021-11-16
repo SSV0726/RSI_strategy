@@ -1,5 +1,5 @@
-const fetch = require("node-fetch");
-const logger = require('pino')();
+const fetch         = require("node-fetch");
+const logger        = require('pino')();
 const path      = require("path");
 const mongoose = require("mongoose");
 const db  = require("../config/db");
@@ -14,14 +14,14 @@ let LIVEPRICES_URL = process.env.LIVEPRICES_URL || "http://localhost:4001";
 let LIVEIND_URL    = process.env.LIVEIND_URL    || "http://localhost:4002";
 let BMS_URL        = process.env.BMS_URL        || "http://localhost:4003";
 
-//let adminEmails = [  "vats0726@gmail.com" ];
-let adminEmails = [ "rachit.chawla@finwaycapital.com",
-                    "vats0726@gmail.com",
-                    "Aayush.suri2423@gmail.com" ,
-                    "pratikmi906@gmail.com" ,
-                    "info@alphabot.ai" ,
-                    "kanishk.250026@gmail.com"
-                ];
+let adminEmails = [  "vats0726@gmail.com" ];
+// let adminEmails = [ "rachit.chawla@finwaycapital.com",
+//                     "vats0726@gmail.com",
+//                     "Aayush.suri2423@gmail.com" ,
+//                     "pratikmi906@gmail.com" ,
+//                     "info@alphabot.ai" ,
+//                     "kanishk.250026@gmail.com"
+//                 ];
 
 
 console.log("LIVEPRICES_URL  = ", LIVEPRICES_URL)
@@ -283,7 +283,7 @@ async function placeTradeOnAllClients( strategy , trades ){
     
     try{
          let strategySet = await  setsCollection.findOne({"nameOfSet" : strategy });
-         //console.log(strategySet);
+         //console.log("strategySet => ", strategySet);
          
          strategySet['accounts'].forEach( async (account) =>{
  

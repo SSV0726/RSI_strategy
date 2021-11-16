@@ -3,8 +3,7 @@
 const   express        = require('express');
 const   path           = require('path');
 const   db             = require('./config/db');
-
-const utils = require("./utils");
+const utils            = require("./utils");
 
 const app = express();
 app.set("view engine","ejs");
@@ -13,7 +12,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.use( express.static( "public" ) );
 
 
-var cors = require('cors');
+require('dotenv').config();
+const cors = require('cors');
 app.use(cors())
 
 //---------------------------------------------------------------//

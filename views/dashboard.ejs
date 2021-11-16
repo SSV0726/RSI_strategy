@@ -2,9 +2,74 @@
 <%- include ('partials/header.ejs'); -%>
 
 </div>
-<div>
+<div style="justify-content: center; text-align :center">
 
-   <h1>   RSI dahsboard </h1>
+ 
+
+   <div class="row">
+    <div class="col-md-6"> 
+      <h1>   RSI dahsboard </h1>
+
+      <!-- This is the Information Card -->
+      <!-- <div class="card">
+        <div class="card-header">
+            
+            <div class="row">
+                <div class="col-md-4"> <h6> Username  :</h6></div>   
+                <div class="col-md-8">  <%= data.username %> </div>  
+            </div>
+
+            <div class="row">
+                <div class="col-md-4"> <h6> ApiKey  :</h6></div>   
+                <div class="col-md-8">  <%= data.apiKey %> </div>  
+            </div>
+
+            <div class="row">
+                <div class="col-md-4"> <h6> AccessToken  :</h6></div>   
+                <div class="col-md-8">  <%= data.accessToken %> </div>  
+            </div>
+
+               
+            <% if ( data.isValidToken == true){ %>
+                <div class="row">
+                    <div class="col-md-4"> <h6>Feed Status :</h6></div>   
+                    <div class="col-md-8" style="background-color: #4dec0e;"></div>
+                </div>
+            <% } else {%>
+                <div class="row">
+                    <div class="col-md-4"> <h6>Feed Status :</h6></div>   
+                    <div class="col-md-8" style="background-color: #ff0000;"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-6"> 
+                        <form method="POST" action="/autoLoginFeed">
+                            <button class="btn   btn-dark btn-block" onclick="alertToWait();">Manual Login</button>
+                        </form>
+                    </div>   
+
+                    <div class="col-md-6"> 
+                        <form method="POST" action="/autoLoginFeed">
+                            <button class="btn   btn-dark btn-block" onclick="alertToWait();">Automatic Login</button>
+                        </form>
+                    </div>   
+                </div>
+            <% } %> 
+                      
+        </div>
+      </div>     -->
+    
+    
+    </div>
+
+
+    <div class="col-md-6">
+      <h1> Logs/Notifications Side  </h1>
+    
+    </div>
+
+
+   </div>
 
 </div>
 
